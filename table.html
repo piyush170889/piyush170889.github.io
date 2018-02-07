@@ -1,0 +1,520 @@
+<html>
+<head>
+<title>Table</title>
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+
+<!-- jQuery library -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+<style>
+body
+{
+font-family: 'Open Sans', sans-serif !important;
+}
+input[type="checkbox"] {
+  visibility: hidden;
+}
+label {
+  cursor: pointer;
+  font-size:14px;
+}
+input[type="checkbox"] + label:before {
+ background: #eee;
+  content: "";
+  display: inline-block;
+  font: 16px/1em sans-serif;
+  height: 16px;
+  margin: 0 .25em 0 0;
+  padding: 0;
+  vertical-align: top;
+  width: 16px;
+}
+input[type="checkbox"]:checked + label:before {
+  background: #b7c400;
+  color: #333;
+  content: "";
+  text-align: center;
+}
+input[type="checkbox"]:checked + label:after {
+  font-weight: bold;
+}
+
+input[type="checkbox"]:focus + label::before {
+    outline: rgb(59, 153, 252) auto 5px;
+}
+.panel-group .panel {
+        border-radius: 0;
+        box-shadow: none;
+        border-color: #EEEEEE;
+    }
+
+    .panel-default > .panel-heading {
+        padding: 0;
+        border-radius: 0;
+        color: #212121;
+        background-color: #FAFAFA;
+        border-color: #EEEEEE;
+    }
+
+    .panel-title {
+        font-size: 14px;
+    }
+
+    .panel-title > a {
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+    }
+
+    .more-less {
+        float: right;
+        color: #212121;
+    }
+
+    .panel-default > .panel-heading + .panel-collapse > .panel-body {
+        border-top-color: #EEEEEE;
+    }
+
+.pad-zero
+{
+padding:0;
+}
+.name-table table th
+{
+text-align:left;
+color:#000;
+font-weight:700;
+background-color:#b7c400;
+}
+.panel-group .panel
+{
+border:none;
+}
+.tooltip-inner
+{
+padding:0;
+min-width:500px;
+
+}
+.tooltip.in
+{
+opacity:1;
+}
+.text-center
+{
+text-align:center !important;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="col-sm-2">
+<div class="row">
+<div class="col-sm-12">
+<p><strong>Anzahl Zimmer</strong></p>
+<br/>
+</div>
+<div class="col-sm-4 pad-zero">
+
+    <p>
+      <input type="checkbox" id="c1" name="cb">
+      <label for="c1">1.5</label>
+    </p>
+    <p>
+      <input type="checkbox" id="c2" name="cb">
+      <label for="c2">3.5</label>
+    </p>
+    <p>
+      <input type="checkbox" id="c3" name="cb">
+      <label for="c3">5.5</label>
+    </p>
+
+</div>
+<div class="col-sm-6">
+ <p>
+      <input type="checkbox" id="c4" name="cb">
+      <label for="c4">2.5</label>
+    </p>
+    <p>
+      <input type="checkbox" id="c5" name="cb">
+      <label for="c5">4.5</label>
+    </p>
+    
+</div>
+</div>
+</div>
+<div class="col-sm-2">
+<div class="row">
+<div class="col-sm-12">
+<p><strong>Etage</strong></p>
+<br/>
+</div>
+<div class="col-sm-6 pad-zero">
+
+    <p>
+      <input type="checkbox" id="c6" name="cb">
+      <label for="c6">EG</label>
+    </p>
+    <p>
+      <input type="checkbox" id="c7" name="cb">
+      <label for="c7">2. OG</label>
+    </p>
+    <p>
+      <input type="checkbox" id="c8" name="cb">
+      <label for="c8">4. OG</label>
+    </p>
+
+</div>
+<div class="col-sm-6">
+ <p>
+      <input type="checkbox" id="c9" name="cb">
+      <label for="c9">1. OG</label>
+    </p>
+    <p>
+      <input type="checkbox" id="c10" name="cb">
+      <label for="c10">3. OG</label>
+    </p>
+    
+</div>
+</div>
+</div>
+<div class="col-sm-2 col-sm-offset-1">
+<div class="row">
+<div class="col-sm-12">
+<p class="text-center"><strong>Mietpreis</strong></p>
+<br/>
+
+</div>
+<div class="col-sm-12">
+<link rel="stylesheet" href="assest/nouislider.css">
+<script src="assest/nouislider.min.js"></script>
+<div class="text-center"><p>700CHF bis 2200CHF</p></div>
+<br/>
+<div id="slider-non-linear-step"></div>
+<br/>
+<div class="example-val text-center" id="slider-non-linear-step-value"></div>
+<script>
+var nonLinearStepSlider = document.getElementById('slider-non-linear-step');
+
+noUiSlider.create(nonLinearStepSlider, {
+	start: [ 700, 2200 ],
+	range: {
+		'min': [     700 ],
+		
+		'max': [ 2200 ]
+	}
+});
+
+
+var nonLinearStepSliderValueElement = document.getElementById('slider-non-linear-step-value');
+
+nonLinearStepSlider.noUiSlider.on('update', function( values, handle ) {
+	nonLinearStepSliderValueElement.innerHTML = values[handle];
+});
+
+
+</script>
+</div>
+</div>
+</div>
+<div class="col-sm-4 col-sm-offset-1">
+<div class="row">
+<div class="col-sm-12">
+<p><strong>Haus</strong></p>
+<br/>
+</div>
+<div class="col-sm-6 pad-zero">
+
+    <p>
+      <input type="checkbox" id="c11" name="cb">
+      <label for="c11">Bruderhofweg 26</label>
+    </p>
+    <p>
+      <input type="checkbox" id="c12" name="cb">
+      <label for="c12">Anna-Heer-Strasse 2</label>
+    </p>
+
+</div>
+<div class="col-sm-6 pad-zero">
+ <p>
+      <input type="checkbox" id="c13" name="cb">
+      <label for="c13">Bruderhofweg 36</label>
+    </p>
+    <p>
+      <input type="checkbox" id="c14" name="cb">
+      <label for="c14">Anna-Heer-Strasse 4</label>
+    </p>
+    
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+
+    <br/>
+	<br/>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="font-size:20px;">
+                        <i class="more-less glyphicon glyphicon-chevron-up"></i>
+                        Rutelerstrasse 10 
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+				<div class="name-table">
+                    <table class="table table-hover">
+						<thead>
+						  <tr>
+							<th>Whg.-Nr	</th>
+							<th>Zimmer</th>
+							<th>Etage</th>
+							<th>m<sub>2</sub></th>
+							<th>Aussenfl.</th>
+							<th>Nettomiete</th>
+							<th>Bruttomiete</th>
+							<th>Anteilschein</th>
+							<th class="text-center">Plan</th>
+							<th>Kontakt</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr data-toggle="tooltip" data-placement="top" title="<img src='img/16-010001.png' style='height:300px' class='img-responsive'>">
+						    <td>130002</td>
+							<td>3.5</td>
+							<td>EG</td>
+							<td>91,3</td>
+							<td></td>
+							<td>1650.00</td>
+							<td>9500.00</td>
+							<td>9500.00</td>
+							<td>
+							<a href="#" style="display:block;text-align:center;">
+							  <span style="color:#333;" class="glyphicon glyphicon-download-alt"></span> 
+							</a>
+							</td>
+							<td>
+							<a href="#" style="color:#333;text-align:center;">
+							  <span class="glyphicon glyphicon-new-window"></span>
+							</a>
+							</td>
+							</tr>
+							<!------- TR ENDS --------->
+							<!------- TR STARTS --------->
+							<tr data-toggle="tooltip" data-placement="top" title="<img src='img/16-010001.png' style='height:300px' class='img-responsive'>">
+						    <td>130002</td>
+							<td>3.5</td>
+							<td>EG</td>
+							<td>91,3</td>
+							<td></td>
+							<td>1650.00</td>
+							<td>9500.00</td>
+							<td>9500.00</td>
+							<td>
+							<a href="#" style="display:block; text-align:center;">
+							  <span style="color:#333;" class="glyphicon glyphicon-download-alt"></span> 
+							</a>
+							</td>
+							<td>
+							<a href="#" style="color:#333; text-align:center;">
+							  <span class="glyphicon glyphicon-new-window"></span>
+							</a>
+							</td>
+							</tr>
+							<!------- TR ENDS --------->
+							<!------- TR STARTS --------->
+							<tr data-toggle="tooltip" data-placement="top" title="<img src='img/16-010001.png' style='height:300px' class='img-responsive'>">
+						    <td>130002</td>
+							<td>3.5</td>
+							<td>EG</td>
+							<td>91,3</td>
+							<td></td>
+							<td>1650.00</td>
+							<td>9500.00</td>
+							<td>9500.00</td>
+							<td>
+							<a href="#" style="display:block; text-align:center;">
+							  <span style="color:#333;" class="glyphicon glyphicon-download-alt"></span> 
+							</a>
+							</td>
+							<td>
+							<a href="#" style="color:#333; text-align:center;">
+							  <span class="glyphicon glyphicon-new-window"></span>
+							</a>
+							</td>
+							</tr>
+							<tr class="tr1">
+						    <td>130002</td>
+							<td>3.5</td>
+							<td>EG</td>
+							<td>91,3</td>
+							<td></td>
+							<td>1650.00</td>
+							<td>9500.00</td>
+							<td>9500.00</td>
+							<td>
+							<a href="#" style="display:block; text-align:center;">
+							  <span style="color:#333;" class="glyphicon glyphicon-download-alt"></span> 
+							</a>
+							</td>
+							<td>
+							<a href="#" style="color:#333; text-align:center;">
+							  <span class="glyphicon glyphicon-new-window"></span>
+							</a>
+							</td>
+							</tr>
+						</tbody>
+					</table>
+					
+					
+				</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="font-size:20px;">
+                        <i class="more-less glyphicon glyphicon-chevron-down"></i>
+                        Rutelerstrasse 11 
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                   <div class="name-table">
+                    <table class="table table-hover">
+						<thead>
+						  <tr>
+							<th>Whg.-Nr	</th>
+							<th>Zimmer</th>
+							<th>Etage</th>
+							<th>m<sub>2</sub></th>
+							<th>Aussenfl.</th>
+							<th>Nettomiete</th>
+							<th>Bruttomiete</th>
+							<th>Anteilschein</th>
+							<th class="text-center">Plan</th>
+							<th>Kontakt</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td>130002</td>
+							<td>3.5</td>
+							<td>EG</td>
+							<td>91,3</td>
+							<td></td>
+							<td>1650.00</td>
+							<td>9500.00</td>
+							<td>9500.00</td>
+							<td>
+							<a href="#" style="display:block; text-align:center;">
+							  <span style="color:#333;" class="glyphicon glyphicon-download-alt"></span> 
+							</a>
+							</td>
+							<td>
+							<a href="#" style="color:#333; text-align:center;">
+							  <span class="glyphicon glyphicon-new-window"></span>
+							</a>
+							</td>
+						  </tr>
+						</tbody>
+					</table>
+				</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="font-size:20px;">
+                        <i class="more-less glyphicon glyphicon-chevron-down"></i>
+                        Rutelerstrasse 12 
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="panel-body">
+                    <div class="name-table">
+                    <table class="table table-hover">
+						<thead>
+						  <tr>
+							<th>Whg.-Nr	</th>
+							<th>Zimmer</th>
+							<th>Etage</th>
+							<th>m<sub>2</sub></th>
+							<th>Aussenfl.</th>
+							<th>Nettomiete</th>
+							<th>Bruttomiete</th>
+							<th>Anteilschein</th>
+							<th class="text-center">Plan</th>
+							<th>Kontakt</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td>130002</td>
+							<td>3.5</td>
+							<td>EG</td>
+							<td>91,3</td>
+							<td></td>
+							<td>1650.00</td>
+							<td>9500.00</td>
+							<td>9500.00</td>
+							<td>
+							<a href="#" style="display:block; text-align:center;">
+							  <span style="color:#333;" class="glyphicon glyphicon-download-alt"></span> 
+							</a>
+							</td>
+							<td>
+							<a href="#" style="color:#333; text-align:center;">
+							  <span class="glyphicon glyphicon-new-window"></span>
+							</a>
+							</td>
+						  </tr>
+						</tbody>
+					</table>
+				</div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- panel-group -->
+    
+    
+</div><!-- container -->
+<script>
+	$(document).ready(function(){
+	$('[data-toggle="tooltip"]').tooltip({html:true}); 
+	});
+</script>
+<script>
+$('.collapse').on('shown.bs.collapse', function(){
+$(this).parent().find(".glyphicon-chevron-down").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
+}).on('hidden.bs.collapse', function(){
+$(this).parent().find(".glyphicon-chevron-up").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
+});
+</script>
+
+</body>
+</html>
